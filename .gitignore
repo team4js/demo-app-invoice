@@ -1,0 +1,7 @@
+node_modules/
+src/config/config.createDB.js
+.idea/
+.directory
+dist/
+src/logs
+src/pictures

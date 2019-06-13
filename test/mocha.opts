@@ -1,0 +1,16 @@
+###
+### mocha.opts
+###
+
+#--grep schedule
+--require @babel/polyfill
+--require @babel/register
+--recursive
+--ui bdd
+--full-trace
+--colors
+--exit
+## --globals okGlobalA,okGlobalB
+## --globals okGlobalC
+## --globals callback*
+## --timeout 200
