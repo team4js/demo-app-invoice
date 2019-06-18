@@ -10,9 +10,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const methodOverride = require('method-override');
-const controller = require('./utils/createControllerRoutes');
+// const controller = require('./utils/createControllerRoutes');
 
-module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler, swaggerMiddleware }) => {
+// swaggerMiddleware
+module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler }) => {
 	const router = Router();
 
 	/* istanbul ignore if */
@@ -32,8 +33,8 @@ module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler,
 		.use(cors())
 		.use(bodyParser.json())
 		.use(compression())
-		.use(containerMiddleware)
-		.use('/docs', swaggerMiddleware);
+		.use(containerMiddleware);
+	// .use('/docs', swaggerMiddleware);
 
 	/*
 	 * Add your API routes here
@@ -44,7 +45,7 @@ module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler,
 	 * The `controllerPath` is relative to the `interfaces/http` folder
 	 */
 
-	apiRouter.use('/users', controller('user/UsersController'));
+	// apiRouter.use('/users', controller('user/UsersController'));
 
 	router.use('/api', apiRouter);
 

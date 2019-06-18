@@ -4,7 +4,7 @@
  * File name - index.js
  * Description -
  */
-const container = require('src/container');
+const container = require('./config/container');
 
 const app = container.resolve('app');
 
